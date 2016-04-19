@@ -266,7 +266,5 @@ if __name__ == "__main__":
     elif args.subparser_name == "delete-bucket":
         delete_bucket(args.bucket_name)
     else:
-        sys.stdout.write(
-            "ERROR: Action passed not valid: {}\n".format(args.action)
-        )
+        parser.print_help()
 
