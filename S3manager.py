@@ -70,8 +70,8 @@ def upload_file(bucket_name, bucket_file, host_file):
         return False
     sys.stdout.write(
         "File: {} uploaded successfully to {} in bucket\n".format(
-            file_host,
-            file_bucket,
+            host_file,
+            bucket_file,
             bucket_name
         )
     )
@@ -243,10 +243,6 @@ if __name__ == "__main__":
     parser_delete_allfiles.add_argument(
         "bucket_name",
         help="S3 bucket name")
-    parser_delete_allfiles.add_argument(
-        "bucket_file",
-        help="Full path file in Bucket"
-    )
     parser_delete_bucket = subparsers.add_parser(
         "delete-bucket",
         help="Delete S3 bucket"
