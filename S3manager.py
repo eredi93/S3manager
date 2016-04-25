@@ -106,8 +106,9 @@ def download_file(bucket_name, bucket_file, host_file, force=False):
     :return: bool
     """
     dst_dir = "/".join(host_file.split("/")[:-1])
-    if not os.path.exists(dst_dir):
-        os.makedirs(dst_dir)
+    if dst_dir:
+        if not os.path.exists(dst_dir):
+            os.makedirs(dst_dir)
     s3_client = boto3.client("s3")
     if not file_check(bucket_file, bucket_name, s3_client):
         sys.stderr.write(
