@@ -25,4 +25,6 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
+  -c CREDENTIAL, --credential CREDENTIAL
+                        Path AWS credential file
 ```
